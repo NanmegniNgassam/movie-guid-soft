@@ -6,9 +6,9 @@ const path = require('path');
 function createMainWindow() {
     const mainWindow = new BrowserWindow({
         title: 'Movie Guid',
-        width: 1000,
-        height: 600,
-        autoHideMenuBar: true
+        width: 3000,
+        height: 1200,
+        autoHideMenuBar: true,
     });
 
     const startUrl = url.format({
