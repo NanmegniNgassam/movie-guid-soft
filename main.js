@@ -2,20 +2,23 @@ const {app, BrowserWindow} = require('electron');
 const url = require('url');
 const path = require('path');
 
-
 function createMainWindow() {
     const mainWindow = new BrowserWindow({
         title: 'Movie Guid',
-        width: 3000,
-        height: 1200,
         autoHideMenuBar: true,
+        minHeight: 800,
+        minWidth: 1000,
+        icon: './public/assets/logo.png'
     });
+
+    mainWindow.maximize()
 
     const startUrl = url.format({
-        pathname: path.join(__dirname, './index.html'),
+        pathname: path.join(__dirname, './public/build/index.html'),
+        protocol: 'file'
     });
 
-    mainWindow.loadFile(startUrl);
+    mainWindow.loadURL(startUrl)
 }
 
 
